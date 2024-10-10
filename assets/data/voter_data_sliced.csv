@@ -1,0 +1,51 @@
+,Voter File VANID,EnvName,City,State,Zip5,Zip4,Address,AddressID,Phone,PhoneIsCell
+0,515,Charo Gonzalez,Wappingers Falls,NY,12590,4405,5 Henry Dr,1041345263,6465844614.0,Likely Cell
+1,766,Juan and Victoria Cruz,Poughkeepsie,NY,12601,2912,50 Rinaldi Blvd Apt 8D,1041345351,9144717897.0,Verified Cell
+2,1011,Julio C Sanchez,Hopewell Junction,NY,12533,7115,6402 Chelsea Cv N,1041345451,8453800612.0,Likely Not a Cell
+3,1093,Felipe P Morales,Poughkeepsie,NY,12601,5650,24 Sheraton Dr,1041345482,8453808798.0,Likely Cell
+4,2735,Xavier Perez,Poughkeepsie,NY,12601,1810,34 Gifford Ave # 1,1041346049,9148448045.0,Likely Not a Cell
+5,3340,Aracelis Torres-Rosado,Poughkeepsie,NY,12601,3264,57 Cannon St Unit 406,1041346256,8454752624.0,Likely Not a Cell
+6,3544,Faviola Castelan and Senon Galvan,Poughkeepsie,NY,12601,1920,11 High St # 1,1041346336,8457704258.0,Likely Not a Cell
+7,3828,Eduardo and Jessica Orrego,Poughkeepsie,NY,12601,1949,43 Clark St,1041346431,8453800583.0,Likely Not a Cell
+8,4491,Maria and Pedro L Garcia,Poughkeepsie,NY,12603,2714,16 Mack Rd,1041346682,9144096786.0,Likely Not a Cell
+9,5086,Griselda Delacruz,Hopewell Junction,NY,12533,7128,7707 Chelsea Cv N,1041346845,8455468706.0,Likely Not a Cell
+10,5120,Sonia Gonzalez and Sergio Ramos,Poughkeepsie,NY,12603,2701,27 Edgar St,1041346855,8454733179.0,Likely Not a Cell
+11,6923,Cesar E Ferreras Jr,Fishkill,NY,12524,2550,1094 Route 9 Lot 13,1041347698,8456332552.0,Verified Cell
+12,6928,Carmelita M Solis,Poughkeepsie,NY,12601,1927,32 Parker Ave # 1,1041347700,8455466021.0,Likely Cell
+13,7012,Rosalia Robles,Poughkeepsie,NY,12603,744,PO Box 3744,1054155320,8452246753.0,Verified Cell
+14,7043,The Garcia and Tirado Families,Poughkeepsie,NY,12601,3440,28 Reservoir Sq,1041347746,8455188026.0,Likely Cell
+15,7394,Cynthia Maldonado,Poughkeepsie,NY,12601,2912,50 Rinaldi Blvd Apt 8B,1041347887,8453922213.0,Likely Not a Cell
+16,7503,Estella Hernandez,Poughkeepsie,NY,12601,2714,306 Mansion St Fl 2,1041347949,9142041166.0,Likely Not a Cell
+17,8016,Yinaris Y Santana,Poughkeepsie,NY,12601,2026,200 N Hamilton St # 2,1041348153,8453091658.0,Verified Cell
+18,8022,Victor Cabrera and Yaika Garcia,Newburgh,NY,12550,1757,1604 Route 300,1041348155,,
+19,8186,Ariel and Edgar A Cordova,Poughkeepsie,NY,12601,3837,550 Main St,1054156195,8455197670.0,Likely Not a Cell
+20,8400,Damary Kiefer,Newburgh,NY,12550,7453,14 Brighton Dr Unit 2606,1041348285,8457420591.0,Verified Cell
+21,8788,Our Friends At,Poughkeepsie,NY,12601,3423,165 Cannon St,1041348423,8455463595.0,Likely Not a Cell
+22,9023,Jose M Almonte,Poughkeepsie,NY,12603,6223,49 Old Overlook Rd,1041348519,8453802940.0,Likely Not a Cell
+23,9730,Angelica A Rivera,Poughkeepsie,NY,12603,1933,158 Rhobella Dr # B,1041348821,8452649665.0,Likely Not a Cell
+24,9868,Isis and Maria P Benitez,Poughkeepsie,NY,12601,4929,262 S Cherry St,1041348892,9174033032.0,Likely Cell
+25,9931,Elizabeth Montano,Poughkeepsie,NY,12603,2361,407 Baker St,1041348925,8457058234.0,Likely Cell
+26,10053,Ramiro Galvan and Rosa Rojo,Poughkeepsie,NY,12603,3320,8 Douglas St,1041348975,8455182689.0,Likely Not a Cell
+27,10758,Norma P Fuentes,Poughkeepsie,NY,12601,2806,1 Arnold Rd,1041349294,8454737099.0,Likely Not a Cell
+28,10975,Maria and Orlando Enciso,Poughkeepsie,NY,12601,2867,101 Corlies Ave,1041349390,6467390391.0,Likely Not a Cell
+29,11000,Gladys and Walter Calderon,Poughkeepsie,NY,12601,2809,132 Corlies Ave,1041349404,9142555249.0,Likely Cell
+30,11632,Our Friends At,Poughkeepsie,NY,12601,3720,31 Roosevelt Ave,1041349635,8453808578.0,Likely Not a Cell
+31,12841,Wilder Manrique,Poughkeepsie,NY,12603,4609,13 Merrick Rd,1041350210,8457971676.0,Likely Not a Cell
+32,12851,Carlos L Ruiz,Poughkeepsie,NY,12603,4627,17 Wantaugh Ave,1041350215,8452328990.0,Likely Not a Cell
+33,119847,Daniel Adorno and Miriam Alonso,Beacon,NY,12508,2847,38 Schenck Ave,1041402084,8453240546.0,Likely Not a Cell
+34,124564,The Perez Family,Poughkeepsie,NY,12603,4116,36 Whittier Blvd,1041404278,7165736049.0,Likely Cell
+35,877736,Jose L Caraballo III,Poughkeepsie,NY,12601,2810,1 De Laval Pl,1041805105,7187814840.0,Likely Cell
+36,880746,Elba and Miguel Carrasquillo,Beacon,NY,12508,2101,53 Roundtree Ct,1041806688,5165091473.0,Likely Not a Cell
+37,909374,Juan Betancourt and Anibal Cuba,Hopewell Junction,NY,12533,4306,6 Quince St,1041822339,9177142653.0,Likely Cell
+38,913602,Maria and Oscar Montanez,Poughkeepsie,NY,12603,7103,1205 Holly Walk,1041824556,9178910199.0,Likely Not a Cell
+39,916847,George Adorno,Newburgh,NY,12550,7023,1043 Maggie Rd,1041826343,3476836719.0,Verified Cell
+40,925924,Jose A Pagan I,Wappingers Falls,NY,12590,3813,5 Plaza Rd,1041831205,,
+41,933007,Alfredo and Jacqueline Perez,Wappingers Falls,NY,12590,6445,66 Brandy Ln,1041834799,9177740643.0,Likely Not a Cell
+42,935192,Yvette Sanchez,Hopewell Junction,NY,12533,5143,35 Wright Blvd,1041835930,6466646655.0,Likely Cell
+43,966350,Daisy A Bruguera,Poughkeepsie,NY,12601,1424,46 Lake St,1041854262,3478580927.0,Likely Not a Cell
+44,1052611,Elizabeth Concepcion and Julio Garcia,Newburgh,NY,12550,2420,18 Knights Cir,1041901637,9172542046.0,Likely Not a Cell
+45,1052648,Evangelina Cordova,Wappingers Falls,NY,12590,1002,8 Ansara Rd,1041901654,7184061897.0,Verified Cell
+46,1079219,Vianel M Martinez,Poughkeepsie,NY,12601,4448,82 S Hamilton St Apt 4D,1041916347,8453805080.0,Likely Not a Cell
+47,1090829,Lydia Castro,Beacon,NY,12508,1332,35 Hudson View Dr Apt A,1041922471,8457056426.0,Verified Cell
+48,1233079,Michelle Medina and Gloria Soto,Hopewell Junction,NY,12533,5339,39 Ridgeview Rd,1042000199,3478286855.0,Likely Not a Cell
+49,1233469,Hector L Caraballo,Wappingers Falls,NY,12590,7549,701 Pondview Loop,1042000352,9148823187.0,Likely Not a Cell
