@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:geocoding/geocoding.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
+import 'form_modal.dart';
 
 class MapPage extends StatefulWidget {
   final String? selectedState;
@@ -26,8 +29,10 @@ class _MapPageState extends State<MapPage> {
     'Verified Cell',
     'Likely Cell',
     'Likely Not a Cell',
-    'Not a Cell'
+    'Not a Cell',
+    'N/A'
   ];
+
 
   Set<Marker> _markers = {};
   LatLng? _mapCenter;
@@ -52,11 +57,9 @@ class _MapPageState extends State<MapPage> {
   Future<void> loadJsonData() async {
     try {
       print('Starting Data Load');
-      String jsonString = await rootBundle.loadString('assets/data/voter_data_sliced.json');
+      String jsonString = await rootBundle.loadString('assets/data/voter_data_with_coords.json');
 
       final jsonData = jsonDecode(jsonString);
-
-      print(jsonData[0]);
 
       print("Finished Data Load");
       _voterData = List<dynamic>.from(jsonData);
@@ -73,6 +76,12 @@ class _MapPageState extends State<MapPage> {
     }
   }
 
+  Future<void> writeJsonData() async {
+    final file = File('assets/data/voter_data_with_coords_sliced.json');
+    String jsonData = jsonEncode(_voterData);
+    file.writeAsString(jsonData);
+  }
+
   Future<void> _createMarkersFromData() async {
     _markers.clear();
 
@@ -82,31 +91,37 @@ class _MapPageState extends State<MapPage> {
 
     for (var voter in _filteredData){
       try{
-        List<Location> locations = await locationFromAddress(
-          voter['Address'] + ', ' + voter['City'] + ', ' + voter['State']
-        ) as List<Location>;
+        // if (voter['Latitude'] == null || voter['Longitude'] == null) {
+        //   List<Location> locations = await locationFromAddress(
+        //     voter['Address'] + ', ' + voter['City'] + ', ' + voter['State']
+        //   ) as List<Location>;
+        //   if (locations.isNotEmpty) {
+        //     voter['Latitude'] = locations.first.latitude;
+        //     voter['Longitude'] = locations.first.longitude;
+        //   }
+        // }else{
+        //   String name = voter['EnvName'];
+        //   print("Location already found for $name ");
+        // }
 
-        if (locations.isNotEmpty) {
-          final double lat = locations.first.latitude;
-          final double lng = locations.first.longitude;
 
-          final String voterName = voter['EnvName'];
-          final String city = voter['City'];
-          final String state = voter['State'];
-          final String address = voter['Address'];
+        final String voterName = voter['EnvName'];
+        final String city = voter['City'];
+        final String state = voter['State'];
+        final String address = voter['Address'];
 
-          Marker marker = Marker(
-            markerId: MarkerId(voter['Voter File VANID'].toString()),
-            position: LatLng(lat, lng),
-            infoWindow: InfoWindow(
-              title: voterName,
-              snippet: "$address, $city, $state",
-            ),
-          );
+        Marker marker = Marker(
+          markerId: MarkerId(voter['Voter File VANID'].toString()),
+          position: LatLng(voter['Latitude'], voter['Longitude']),
+          infoWindow: InfoWindow(
+            title: voterName,
+            snippet: "$address, $city, $state",
+          ),
+        );
 
-          _markers.add(marker);
+        _markers.add(marker);
 
-        }
+      
       } catch(e) {
         print("Error getting location for ${voter['EnvName']}: $e");
       }
@@ -147,55 +162,57 @@ class _MapPageState extends State<MapPage> {
   _showModal() {
     showModalBottomSheet<void>(
       context: context,
+      isScrollControlled: true,
       builder: (BuildContext context) {
-        return SizedBox(
-          height: 600,
-          child: Center(
+        return FormModal();
+        // return SizedBox(
+        //   height: 600,
+        //   child: Center(
             
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                const Text('Filter'),
-                Expanded(
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      children: <Widget> [
-                        TextFormField(
-                          onChanged: (value) => _selectedZipCode = value,
-                          decoration: const InputDecoration(
-                            hintText: 'Zip Code',
-                          ),
-                        ),
+        //     child: Column(
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       mainAxisSize: MainAxisSize.min,
+        //       children: <Widget>[
+        //         const Text('Filter'),
+        //         Expanded(
+        //           child: Form(
+        //             key: _formKey,
+        //             child: Column(
+        //               children: <Widget> [
+        //                 TextFormField(
+        //                   onChanged: (value) => _selectedZipCode = value,
+        //                   decoration: const InputDecoration(
+        //                     hintText: 'Zip Code',
+        //                   ),
+        //                 ),
 
-                        MultiSelectDialogField(
-                          items: phoneTypes.map((e) => MultiSelectItem(e, e)).toList(),
-                          listType: MultiSelectListType.CHIP,
-                          onConfirm: (values){
-                            _selectedPhoneType = values;
-                          }
+        //                 MultiSelectDialogField(
+        //                   items: phoneTypes.map((e) => MultiSelectItem(e, e)).toList(),
+        //                   listType: MultiSelectListType.CHIP,
+        //                   onConfirm: (values){
+        //                     _selectedPhoneType = values;
+        //                   }
 
-                        ),
+        //                 ),
                         
-                        ElevatedButton(
-                          child: const Text('Close BottomSheet'),
-                          onPressed: () => {
-                            Navigator.pop(context),
-                            _filterData(),
-                          }
-                        ),
+        //                 ElevatedButton(
+        //                   child: const Text('Close BottomSheet'),
+        //                   onPressed: () => {
+        //                     Navigator.pop(context),
+        //                     _filterData(),
+        //                   }
+        //                 ),
 
-                      ]
+        //               ]
                       
-                    )
+        //             )
 
-                  ),
-                )
-              ],
-            ),
-          ),
-        );
+        //           ),
+        //         )
+        //       ],
+        //     ),
+        //   ),
+        // );
       },
     );
   }
@@ -250,6 +267,10 @@ class _MapPageState extends State<MapPage> {
                       child: Column(
                         children: <Widget>[
                           button(_showModal, Icons.map),
+                          // SizedBox(
+                            // height: 16.0,
+                          // ),
+                          // button(writeJsonData() as VoidCallback, Icons.file_download),
                           SizedBox(
                             height: 16.0,
                           )

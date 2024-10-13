@@ -1,9 +1,9 @@
 import pandas as pd
 
 
-df = pd.read_csv('constituent_data.csv')
+df = pd.read_csv('../assets/data/voter_data_with_coords.csv')
 
-df = df[:50]
+df = df[:1000]
 
-df.to_csv('voter_data_sliced.csv')
-df.to_json('voter_data_sliced.json', orient='records')
+# df.to_csv('../assets/data/voter_data_with_coords.csv')
+df.to_json('../assets/data/voter_data_with_coords_sliced.json', orient='records')
